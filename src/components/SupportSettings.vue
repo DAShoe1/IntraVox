@@ -193,11 +193,11 @@
 			<div class="contact-info-block">
 				<p>
 					{{ t('intravox', 'Learn more about IntraVox') }}:
-					<a href="https://voxcommons.com" target="_blank" rel="noopener noreferrer">voxcommons.com</a>
+					<a href="https://voxcloud.nl" target="_blank" rel="noopener noreferrer">voxcloud.nl</a>
 				</p>
 				<p>
 					{{ t('intravox', 'Questions or feedback?') }}
-					<a href="mailto:info@voxcommons.com">info@voxcommons.com</a>
+					<a href="mailto:info@voxcloud.nl">info@voxcloud.nl</a>
 				</p>
 			</div>
 		</div>
@@ -315,7 +315,7 @@ export default {
 	computed: {
 		pricingUrl() {
 			const lang = (window.document?.documentElement?.lang || '').split('-')[0]
-			return lang === 'nl' ? 'https://voxcommons.com/pricing/#intravox' : 'https://voxcommons.com/en/pricing/#intravox'
+			return lang === 'nl' ? 'https://voxcloud.nl/pricing/#intravox' : 'https://voxcloud.nl/en/pricing/#intravox'
 		},
 	},
 
