@@ -4,6 +4,12 @@ All notable changes to IntraVox will be documented in this file.
 
 IntraVox is a Nextcloud intranet page builder.
 
+## [1.3.4] - 2026-05-08 — Version bump for upgrade path
+
+Identical content to 1.3.1 (released earlier today). The version number is bumped to 1.3.4 because an internal 1.3.3 build was published to the App Store on 2026-05-06; instances that picked up that build would not see 1.3.1 as an upgrade. 1.3.4 ensures every existing install gets the editor/table improvements and the privacy cleanup of [1.3.1] below.
+
+No code changes vs. 1.3.1.
+
 ## [1.3.1] - 2026-05-08 — Editor, telemetry & table improvements
 
 ### Added
