@@ -173,7 +173,7 @@ class CalendarService {
 
         if (isset($dtStarts[0]) && $dtStarts[0] instanceof \DateTimeInterface) {
             $start = $dtStarts[0];
-            $isAllDay = isset($dtStarts[1]['VALUE']) && $dtStarts[1]['VALUE'] === 'DATE';
+            $isAllDay = isset($dtStarts[1]['VALUE']) && $dtStarts[1]['VALUE'][0] === 'DATE';
         } elseif (isset($dtStarts[0]) && is_string($dtStarts[0])) {
             try {
                 $start = new \DateTimeImmutable($dtStarts[0]);
