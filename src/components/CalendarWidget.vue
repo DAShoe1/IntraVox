@@ -35,8 +35,8 @@
         :class="{ 'calendar-event--no-link': !getEventUrl(event) }"
       >
         <div class="event-date-badge" :style="{ backgroundColor: event.calendarColor }">
-          <span class="event-date-day">{{ getDayNumber(event.start) }}</span>
-          <span class="event-date-month">{{ getMonthAbbr(event.start) }}</span>
+          <span class="event-date-day">{{ getDayNumber(event.start, event.isAllDay) }}</span>
+          <span class="event-date-month">{{ getMonthAbbr(event.start, event.isAllDay) }}</span>
         </div>
         <div class="event-details">
           <span v-if="getProximityLabel(event.start)" class="event-proximity" :style="{ color: event.calendarColor }">
@@ -259,12 +259,14 @@ export default {
     isPastRange() {
       return ['past_week', 'past_month', 'past_three_months'].includes(this.widget.dateRange);
     },
-    getDayNumber(dateStr) {
+    getDayNumber(dateStr, isAllDayBool) {
       if (!dateStr) return '';
+      if (isAllDayBool) return new Date(dateStr).getUTCDate();
       return new Date(dateStr).getDate();
     },
-    getMonthAbbr(dateStr) {
+    getMonthAbbr(dateStr, isAllDayBool) {
       if (!dateStr) return '';
+      if (isAllDayBool) return new Date(dateStr).toLocaleDateString(undefined, { month: 'short', timeZone: 'UTC' }).toUpperCase();
       return new Date(dateStr).toLocaleDateString(undefined, { month: 'short' }).toUpperCase();
     },
     getProximityLabel(dateStr) {
